@@ -1,14 +1,21 @@
-var first = ['1', '2', '3']
-var second = ['1', '2', '5']
+var A = ['1', '2', '3']
+var B = ['1', '2', '3', '4']
+
 var result = 0
-for (i = 0; i < second.length; i++) {
-    if (first.includes(second[i])) {
+for (i = 0; i < B.length; i++) {
+    if (A.includes(B[i])) {
         result++
     }
 }
-if (result == second.length) {
-    console.log('포함')
-} else if (result < second.length) {
+if (result == B.length || result == A.length) {
+    if (A.length == B.length) {
+        console.log('A = B')
+    } else if (A.length > B.length) {
+        console.log('A는 B를 포함한다')
+    } else {
+        console.log('B는 A를 포함한다')
+    }
+} else if (result < B.length) {
     console.log('교집합')
 } else {
     console.log('여집합')
